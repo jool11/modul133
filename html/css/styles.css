@@ -1,12 +1,12 @@
 
 /* background */
-#background
+.background
 {
   position: absolute;
   width: 1920px;
   height: 1080px;
 
-  background:url("img/study.jfif");
+  background-image:url("img/study.jfif");
   filter: blur(4px);
 }
 
@@ -15,7 +15,7 @@
 /* Rectangle 2 */
 #menü
 {
-osition: absolute;
+position: absolute;
 width: 1238px;
 height: 863px;
 
