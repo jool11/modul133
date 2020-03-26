@@ -1,0 +1,195 @@
+
+/* background */
+#background
+{
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+
+  background:url("img/study.jfif");
+  filter: blur(4px);
+}
+
+
+
+/* Rectangle 2 */
+#menü
+{
+osition: absolute;
+width: 1238px;
+height: 863px;
+
+background: #FFFFFF;
+border-radius: 25px;
+}
+
+
+/* Student Login */
+#Studentlogin
+{
+position: absolute;
+width: 372px;
+height: 73px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 54px;
+text-align: center;
+
+color: #5B5656;
+}
+
+/* E-Email */
+#E-Mail
+{
+position: absolute;
+width: 453px;
+height: 68px;
+
+background: #E5E5E5;
+border-radius: 35px;
+
+}
+/* Password */
+#Password
+{
+position: absolute;
+width: 453px;
+height: 68px;
+
+background: #E5E5E5;
+border-radius: 35px;
+}
+
+/* Login */
+
+#Login
+{
+position: absolute;
+width: 453px;
+height: 68px;
+
+background: #77C18C;
+border-radius: 35px;
+
+}
+
+/* Stundegrafik */
+#Stundegrafik
+{
+position: absolute;
+width: 453px;
+height: 381.75px;
+}
+
+
+/* Passwort Icon */
+#Passwordicon
+{
+position: absolute;
+width: 18.67px;
+height: 24px;
+}
+
+#Emailicon
+/* Mail Icon */
+{
+position: absolute;
+width: 23.25px;
+height: 18.16px;
+}
+
+
+/* Email */
+#E-Mailtext
+{
+position: absolute;
+width: 453px;
+height: 68px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 36px;
+display: flex;
+align-items: center;
+
+color: #6D6D6D;
+}
+
+
+/* Password */
+#Passwordtext
+{
+position: absolute;
+width: 453px;
+height: 68px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 36px;
+display: flex;
+align-items: center;
+
+color: #6D6D6D;
+}
+
+
+/* Login */
+#Logintext
+{
+position: absolute;
+width: 453px;
+height: 68px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+
+/* Vergessen Username / Passwort? */
+#Vergessenespasswort
+{
+position: absolute;
+width: 452px;
+height: 25px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+text-align: center;
+
+color: #929191;
+}
+
+/* Telefonnummer  */
+#Telefonnummer
+{
+position: absolute;
+width: 452px;
+height: 25px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+text-align: center;
+
+color: #515151;
+}
