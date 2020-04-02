@@ -1,12 +1,31 @@
 
-/* background */
+.body
+{
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+
+}
+
+.wrapper
+{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
 .background
 {
-  position: absolute;
-  width: 1920px;
-  height: 1080px;
-
-  background-image:url("img/study.jfif");
+  flex:1;
+  background-image:url("../img/study.jfif");
+  background-size:cover;
+  background-repeat: no-repeat;
   filter: blur(4px);
 }
 
