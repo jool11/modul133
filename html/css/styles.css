@@ -3,7 +3,7 @@
 </style>
 .titel1
 {
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 1200px;
@@ -19,12 +19,17 @@ font-weight: bold;
 font-size: 36px;
 line-height: 54px;
 color: #5B5656;
-margin-right: auto;
 
 }
-
-.rwapper
+.flexbox
 {
-  display: flex;
+  display:flex;
   justify-content: flex-end;
+  border-left:10px;
+}
+.img1
+{
+  position: relative;
+  width: 1238px;
+  height: 863px;
 }
