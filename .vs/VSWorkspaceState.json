@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\html",
+    "\\html\\css"
   ],
-  "SelectedNode": "\\index.php",
+  "SelectedNode": "\\html\\css\\styles.css",
   "PreviewInSolutionExplorer": false
 }
