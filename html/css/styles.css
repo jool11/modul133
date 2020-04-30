@@ -14,10 +14,6 @@
 .LoginText
 {
 font-family: 'Poppins', sans-serif;
-font-style: normal;
-font-weight: bold;
-font-size: 36px;
-line-height: 54px;
 color: #5B5656;
 
 }
@@ -29,7 +25,13 @@ color: #5B5656;
 }
 .img1
 {
+<<<<<<< HEAD
   position: relative;
   width: 1500px;
   height: 100px;
+=======
+  /* position: relative;
+  width: 1238px;
+  height: 863px; */
+>>>>>>> 6e2e97a6ddaa5f58843c14c9d96f30dee539690d
 }
