@@ -10,7 +10,7 @@
 
 <body class="bg-cover bg-center min-h-screen min-w-screen p-8" style="background-image: url(img/study.jfif)">
 	<div class="bg-white max-w-4xl mx-auto rounded-lg shadow-2xl p-4 | md:flex md:p-16 md:pb-4">
-		<div class="text-center img1 | md:w-1/2 md:mr-4">
+		<div class="text-center | md:w-1/2 md:mr-4">
 			<img src="img/Stundent.svg" alt="Student">
 		</div>
 		<div class="mt-4 text-center text-gray-800 | md:w-1/2 md:ml-4 md:mt-0">
