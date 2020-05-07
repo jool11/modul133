@@ -1,12 +1,21 @@
 <?php
-
+// Die gestartete Session wird übertragen somit können die Variablen übertragen werden. 
 session_start();
+<<<<<<< HEAD
+// Es wird die Variable vom User angeben, damit später die Variable aufgerufen werden kann. 
+=======
 //Session  wird gestarted.
+>>>>>>> 7db0c26653e931a93c3b89a6f937754f8fb8260f
 if (! $_SESSION['user']) {
 	header("Location: /login.php");
 	return;
 }
+<<<<<<< HEAD
+//login wird der Benutzer in der Datenbanke gespeichert dafür wird er serialized das heisst er wird gestringed
+// Das gestringe Array wird zu einem Array wieder gemacht mit unserialize.
+=======
 //login wird der benutzer in der Datenbanke gespeichert dafÃ¼r wird er serialized das heisst er wird gestringed, Das gestringe Array wird zu einem Arry wieder gemacht mit unserialize.
+>>>>>>> 7db0c26653e931a93c3b89a6f937754f8fb8260f
 $user = unserialize($_SESSION['user']);
 ?>
 

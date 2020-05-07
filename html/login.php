@@ -1,18 +1,14 @@
 <?php
-
+// F�r die unteren Commands wird dieses File ben�tigt
 require 'db.php';
-//Session Start
+//Die Session wird gestartet
 session_start();
 // Guckt ob der Arrayk key der Variable _Session existiert.
 if (array_key_exists("user", $_SESSION)) {
 	header("Location: /index.php");
 	return;
 }
-
-// Fehler aus der Session lüschen
-unset($_SESSION['error']);
-
-// Login Eingabe sowie Passwort überprüfung.
+// Dies ist die Abfrage, welche �ber die Datenbank l�uft. Es fragt ab ob diese Eingabe mit der, der Datenbank �bereinstimmt.
 if (array_key_exists("username", $_POST) && array_key_exists("password", $_POST)) {
 	$user = $_POST['username'];
 	$password = $_POST['password'];
