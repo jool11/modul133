@@ -1,12 +1,12 @@
 <?php
 
 session_start();
-
+//Session  wird gestarted.
 if (! $_SESSION['user']) {
 	header("Location: /login.php");
 	return;
 }
-
+//login wird der benutzer in der Datenbanke gespeichert dafür wird er serialized das heisst er wird gestringed, Das gestringe Array wird zu einem Arry wieder gemacht mit unserialize.
 $user = unserialize($_SESSION['user']);
 ?>
 
