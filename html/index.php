@@ -94,7 +94,7 @@ $user = unserialize($_SESSION['user']);
           </div>
           <div style=" flex:2" class="flex flex-col item-center justify-center text-center">
             <p class="font-bold mb-8" style="color: #6D6D6D;">Hallo, <?php echo $user['name']; ?>!</p>
-            <img src="img/Reader.svg">
+            <img src="./img/reader.svg">
           </div>
         </div>
       <!-- <div class="text-center mb-8 | md:w-1/2 md:mr-4">
