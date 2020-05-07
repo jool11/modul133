@@ -1,29 +1,43 @@
 <?php
 // Für die unteren Commands wird dieses File benötigt
 require 'db.php';
+<<<<<<< HEAD
 //Die Session wird gestartet
+=======
+//Session Start
+>>>>>>> 7db0c26653e931a93c3b89a6f937754f8fb8260f
 session_start();
-
+// Guckt ob der Arrayk key der Variable _Session existiert.
 if (array_key_exists("user", $_SESSION)) {
 	header("Location: /index.php");
 	return;
 }
+<<<<<<< HEAD
 // Dies ist die Abfrage, welche über die Datenbank läuft. Es fragt ab ob diese Eingabe mit der, der Datenbank übereinstimmt.
+=======
+// Login Eingabe sowie Passwort Ã¼berprÃ¼fung.
+>>>>>>> 7db0c26653e931a93c3b89a6f937754f8fb8260f
 if (array_key_exists("username", $_POST) && array_key_exists("password", $_POST)) {
 	$user = $_POST['username'];
 	$password = $_POST['password'];
-
+// Datenbank abfrage auf eintrÃ¤ge
 	$stmt = $db->prepare("select * from users where username = ?");
 	$stmt->bind_param("s", $user);
 	$stmt->execute();
 	$result = $stmt->get_result();
 	$data = $result->fetch_assoc();
+<<<<<<< HEAD
 	// Hier wird die Überprüfungen mit der Datenbank gemacht. Falls das Passwort oder E-Mail nicht stimmen sollte, so wird es einen Error geben. 
+=======
+
+//Ã¼berprÃ¼fung des Passwortes, ist der hash Ã¼bereinstimmmed wie mit dem in der Datenbank.
+>>>>>>> 7db0c26653e931a93c3b89a6f937754f8fb8260f
 	if ($data > 0) {
 		if (password_verify($password, $data['password'])) {
 			$_SESSION['user'] = serialize($data);
 			header("Location: /index.php");
 			return;
+			// Falsches Passwort wenn ArrayKey "Error"
 		} else {
 			$_SESSION['error'] = "Falscher Benutzername oder Passwort";
 		}
