@@ -1,0 +1,80 @@
+
+
+drop database if exists Pizzeria_Pirat;
+create database Pizzeria_Pirat;
+USE Pizzeria_Pirat; 
+
+create table Kategorien(
+ID_Kategorien int not null auto_increment,
+Pizza varchar(60),
+Getraenk varchar(60),
+Spaghetti varchar(60),
+
+primary key(ID_Kategorien)
+);
+
+create table Produkte(
+ID_Produkte int not null auto_increment,
+Preis decimal not null,
+Beschreibung varchar(255),
+Bezeichnung varchar(80) not null,
+ID_FK_Kategorien int not null,
+
+primary key(ID_Produkte),
+foreign Key(ID_FK_Kategorien) References Kategorien(ID_Kategorien)
+);
+
+create table Ort(
+ID_Ort int not null auto_increment,
+Ort varchar(60) not null,
+Postleitzahl int not null,
+
+primary key(ID_Ort)
+);
+
+create table Kunden(
+ID_Kunden int not null auto_increment,
+Vorname Varchar(60) not null,
+Nachname Varchar(60) not null,
+Strasse Varchar(60) not null,
+Strassennummer Varchar(20) not null,
+Email Varchar(100),
+Telefonnumer int not null,
+ID_FK_Ort int not null,
+
+primary key(ID_Kunden),
+foreign Key(ID_FK_Ort) References Ort(ID_Ort)
+);
+
+create table Bestellung(
+ID_Bestellung int not null auto_increment,
+Anzahl int not null,
+Bestelldatum date not null,
+Lieferdatum date,
+ID_FK_Produkte int not null,
+ID_FK_Kunden int not null,
+
+primary key(ID_Bestellung),
+Foreign Key(ID_FK_Produkte) References Kunden(ID_Kunden),
+Foreign Key(ID_FK_Kunden) References Produkte(ID_Produkte)
+);
+
+create table Produktekategorie(
+ID_Produktekategorie int not null auto_increment, 
+ID_FK_Produkte int not null,
+ID_FK_Kategorien int not null,
+
+primary key(ID_Produktekategorie),
+foreign Key(ID_FK_Produkte) References Produkte(ID_Produkte),
+foreign Key(ID_FK_Kategorien) References Kategorien(ID_Kategorien)
+);
+
+create table Abschicken(
+ID_Abschicken int NOT NULL auto_increment, 
+ID_FK_Produkte int not null,
+ID_FK_Bestellung int not null,
+
+primary key(ID_Abschicken),
+foreign Key(ID_FK_Produkte) References Produkte(ID_Produkte),
+foreign Key(ID_FK_Bestellung) References Bestellung(ID_Bestellung)
+);

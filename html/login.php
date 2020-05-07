@@ -1,14 +1,14 @@
 <?php
-
+// Für die unteren Commands wird dieses File benötigt
 require 'db.php';
-
+//Die Session wird gestartet
 session_start();
 
 if (array_key_exists("user", $_SESSION)) {
 	header("Location: /index.php");
 	return;
 }
-
+// Dies ist die Abfrage, welche über die Datenbank läuft. Es fragt ab ob diese Eingabe mit der, der Datenbank übereinstimmt.
 if (array_key_exists("username", $_POST) && array_key_exists("password", $_POST)) {
 	$user = $_POST['username'];
 	$password = $_POST['password'];
@@ -18,7 +18,7 @@ if (array_key_exists("username", $_POST) && array_key_exists("password", $_POST)
 	$stmt->execute();
 	$result = $stmt->get_result();
 	$data = $result->fetch_assoc();
-
+	// Hier wird die Überprüfungen mit der Datenbank gemacht. Falls das Passwort oder E-Mail nicht stimmen sollte, so wird es einen Error geben. 
 	if ($data > 0) {
 		if (password_verify($password, $data['password'])) {
 			$_SESSION['user'] = serialize($data);
