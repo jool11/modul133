@@ -8,6 +8,10 @@ if (array_key_exists("user", $_SESSION)) {
 	header("Location: /index.php");
 	return;
 }
+
+// Fehler aus der Session lüschen
+unset($_SESSION['error']);
+
 // Login Eingabe sowie Passwort überprüfung.
 if (array_key_exists("username", $_POST) && array_key_exists("password", $_POST)) {
 	$user = $_POST['username'];
