@@ -1,29 +1,31 @@
 <?php
 
 require 'db.php';
-
+//Session Start
 session_start();
-
+// Guckt ob der Arrayk key der Variable _Session existiert.
 if (array_key_exists("user", $_SESSION)) {
 	header("Location: /index.php");
 	return;
 }
-
+// Login Eingabe sowie Passwort überprüfung.
 if (array_key_exists("username", $_POST) && array_key_exists("password", $_POST)) {
 	$user = $_POST['username'];
 	$password = $_POST['password'];
-
+// Datenbank abfrage auf einträge
 	$stmt = $db->prepare("select * from users where username = ?");
 	$stmt->bind_param("s", $user);
 	$stmt->execute();
 	$result = $stmt->get_result();
 	$data = $result->fetch_assoc();
 
+//überprüfung des Passwortes, ist der hash übereinstimmmed wie mit dem in der Datenbank.
 	if ($data > 0) {
 		if (password_verify($password, $data['password'])) {
 			$_SESSION['user'] = serialize($data);
 			header("Location: /index.php");
 			return;
+			// Falsches Passwort wenn ArrayKey "Error"
 		} else {
 			$_SESSION['error'] = "Falscher Benutzername oder Passwort";
 		}
