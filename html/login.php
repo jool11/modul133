@@ -3,17 +3,21 @@
 require 'db.php';
 
 session_start();
-//
-// if (array_key_exists("user", $_SESSION)) {
-// 	header("Location: /index.php");
-// 	return;
-// }
+
+if (array_key_exists("user", $_SESSION)) {
+	header("Location: /index.php");
+	return;
+}
 
 if (array_key_exists("username", $_POST) && array_key_exists("password", $_POST)) {
 	$user = $_POST['username'];
 	$password = $_POST['password'];
-	$result = mysqli_query($db, "select * from users where username = '{$user}'");
-	$data = mysqli_fetch_assoc($result);
+
+	$stmt = $db->prepare("select * from users where username = ?");
+	$stmt->bind_param("s", $user);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	$data = $result->fetch_assoc();
 
 	if ($data > 0) {
 		if (password_verify($password, $data['password'])) {
@@ -21,13 +25,12 @@ if (array_key_exists("username", $_POST) && array_key_exists("password", $_POST)
 			header("Location: /index.php");
 			return;
 		} else {
-			var_dump('login incorrect');
+			$_SESSION['error'] = "Falscher Benutzername oder Passwort";
 		}
 	} else {
-		var_dump('login incorrect');
+		$_SESSION['error'] = "Falscher Benutzername oder Passwort";
 	}
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -65,6 +68,14 @@ if (array_key_exists("username", $_POST) && array_key_exists("password", $_POST)
 				<div class="mt-4">
 					<button class="w-full font-bold rounded-full text-white px-6 py-3 outline-none focus:shadow-outline" style="background: #77C18C">Login</button>
 				</div>
+
+				<?php if (array_key_exists("error", $_SESSION)): ?>
+					<div class="mt-4">
+						<div class="w-full rounded-full text-white outline-none focus:shadow-outline bg-red-500 text-sm font-semibild py-2">
+							<p><?php echo $_SESSION['error']; ?></p>
+						</div>
+					</div>
+				<?php endif; ?>
 
 				<div class="mt-2">
 					<a class="text-sm" href="#">Vergessen <span class="text-gray-700 font-bold">Username / Password</span></a>
